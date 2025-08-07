@@ -1,3 +1,6 @@
+console.log("--- API file (contact.js) loaded by Vercel ---");
+
+
 const mongoose = require('mongoose');
 
 // This connects to the database. It's placed outside the handler
@@ -23,6 +26,9 @@ const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSche
 // This is the main serverless function Vercel will run.
 module.exports = async (req, res) => {
     // We only want this endpoint to accept POST requests
+        console.log(`--- Request received with method: ${req.method} ---`);
+
+    
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
