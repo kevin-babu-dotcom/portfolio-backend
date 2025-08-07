@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 
 // This connects to the database. It's placed outside the handler
 // to be reused across function invocations.
+console.log("Vercel is using this MONGO_URI:", process.env.MONGO_URI);
+
 mongoose.connect(process.env.MONGO_URI);
 
 // This defines the structure of the data you want to save.
